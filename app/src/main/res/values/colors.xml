@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#04CEFE</color>
+    <color name="colorPrimaryDark">#174D73</color>
+    <color name="colorAccent">#0D78BE</color>
+
+    <!-- General -->
+    <color name="privacyMonitorBlueColor">#04CEFE</color>
+
+    <!-- Text -->
+
+    <color name="primaryText">#404040</color>
+    <color name="secondaryText">#0D78BE</color>
+
+    <!-- Search view -->
+    <color name="searchToolbarBackground">#FFFFFF</color>
+    <color name="searchEditTextColor">#404040</color>
+    <color name="searchEditHintColor">#A0A0A0</color>
+    <color name="searchEditTextBackground">#EEEEEE</color>
+    <color name="searchEditFocusedStroke">#979797</color>
+    <color name="borderSeparator">#ECECEC</color>
+    
+    <!-- Trend -->
+    <color name="trendNoChangeColor">#B6B6B6</color>
+    <color name="trendImprovingColor">#42B03D</color>
+    <color name="trendDecliningColor">#E64545</color>
+
+    <!-- Score -->
+    <color name="scoreUnknownColor">#B6B6B6</color>
+    <color name="scoreVeryPoorColor">#C33E7E</color>
+    <color name="scoreFairColor">#9F3380</color>
+    <color name="scoreGoodColor">#672976</color>
+    <color name="scoreVeryGoodColor">#326DB1</color>
+    <color name="scoreExceptionalColor">#1A468A</color>
+
+    <!-- Score Chart -->
+    <color name="scoreChartBackground">#DFDFE2</color>
+    <color name="previousScoreDefaultColor">#FFFFFF</color>
+    <color name="previousScoreDecliningColor">#E64545</color>
+
+    <!-- Welcome screen -->
+    <color name="welcomeScreenTextColor">#FFFFFF</color>
+    <color name="welcomeScreenPageIndicatorSelectedColor">#ABEFFF</color>
+    <color name="welcomeScreenPageIndicatorUnselectedColor">#08B4DD</color>
+    <color name="welcomeButtonDisabledColor">#D4D4D4</color>
+
+</resources>

@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Privacy Monitor</string>
+
+    <string name="search">Search</string>
+    <string name="favourite">Favourite</string>
+    <string name="go_back">Go Back</string>
+    <string name="go_forward">Go Forward</string>
+    <string name="close">Close</string>
+
+    <string name="searchEditTextHint">Enter a website URL:</string>
+    <string name="trend">Trend:</string>
+    <string name="scoreActivityLabel">Get Privacy Score</string>
+
+    <!-- Welcome screen -->
+
+    <string name="welcomeScreenTitlePage1">We read the fine print\nso that you don\'t have to!</string>
+    <string name="welcomeScreenDescriptionPage1">Privacy Monitor by Osano is a free, open source, privacy rating app
+        that lets you quickly understand which sites ands apps should be trusted with your private data.
+    </string>
+    <string name="welcomeScreenTitlePage2">Access the privacy ratings in the app\nusing our private web browser.
+    </string>
+    <string name="welcomeScreenDescriptionPage2">Or quickly access ratings from the\nshare sheet of your favorite
+        apps!
+    </string>
+    <string name="welcomeScreenTitlePage3">If you don\'t see the share sheet\nwhen you click the share button from\nyour
+        favorite apps, look for the\n\"more\" button to open the\nActivities options screen.
+    </string>
+    <string name="welcomeScreenDescriptionPage3">Next, make sure that Privacy Monitor is enabled, and drag \"Privacy
+        Monitor\" to the top of the list.\n\nNow you\'re ready to take charge of your own privacy online!
+    </string>
+
+    <string name="welcomeButtonNext">NEXT</string>
+    <string name="welcomeButtonFinish">GOT IT!</string>
+
+    <string name="save_to_favorites">Save to Favorites</string>
+    <string name="share_url">Share URL</string>
+    <string name="dialog_title">URL</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="favoriteUrlAdded">Favorite URL added</string>
+    <string name="favoritesTitle">Favorites</string>
+    <string name="toastUrlDeleted">URL deleted</string>
+    <string name="noFavoritesAdded">No Favorites Added yet</string>
+    <string name="shareLinkUsing">Share link using</string>
+    <string name="requestScoreTitle">Request Score</string>
+    <string name="scoreAnalysisNotFoundText">No score found for this site.</string>
+    <string name="scoreAnalysisSuccessText">Your request has been received and will be handled in the order received.</string>
+    <string name="networkError">An unknown error has occured.</string>
+</resources>

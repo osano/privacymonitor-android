@@ -1,0 +1,56 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BaseAppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="PrivacyMonitorTheme" parent="BaseAppTheme"/>
+
+    <style name="PrivacyMonitorTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="PrivacyMonitorTheme.Launch" parent="PrivacyMonitorTheme.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+
+    <style name="PrivacyMonitorTheme.Welcome" parent="PrivacyMonitorTheme.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+    </style>
+
+    <style name="PrivacyMonitorTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
+
+    <style name="PrivacyMonitorTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light"/>
+
+    <style name="SearchEditTextStyle" parent="android:Widget.EditText">
+        <item name="android:textColor">@color/primaryText</item>
+        <item name="android:background">@drawable/search_edit_text_states</item>
+        <item name="android:textColorHint">@color/searchEditHintColor</item>
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:paddingEnd">15dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:hint">@string/searchEditTextHint</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="WelcomeButton" parent="Widget.AppCompat.Button">
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="actionButton" parent="Widget.AppCompat.Button">
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/secondaryText</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+</resources>

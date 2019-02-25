@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/searchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/searchToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:contentInsetStart="0dp"
+                android:background="@color/searchToolbarBackground">
+
+            <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp">
+
+                    <EditText
+                            android:id="@+id/searchEditText"
+                            android:layout_height="36dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:inputType="textUri"
+                            android:imeOptions="actionDone"
+                            android:selectAllOnFocus="true"
+                            android:layout_gravity="center_vertical"
+                            style="@style/SearchEditTextStyle"/>
+
+                    <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="10dp" android:layout_gravity="center_vertical">
+
+                        <ProgressBar
+                                android:id="@+id/searchProgressBar"
+                                style="@style/Base.Widget.AppCompat.ProgressBar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:visibility="invisible"/>
+
+                        <ImageButton
+                                android:id="@+id/searchButton"
+                                android:src="@mipmap/search_action"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="TODO"/>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <ProgressBar
+                        android:id="@+id/webViewProgressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progressDrawable="@drawable/progress_bar_drawable"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:minHeight="2dp"
+                        android:maxHeight="2dp"
+                        android:visibility="gone"/>
+
+            </FrameLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </LinearLayout>
+
+    <FrameLayout
+            android:id="@+id/webViewFrameLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchLayout"
+            app:layout_constraintBottom_toTopOf="@id/navigationToolbar">
+
+        <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@drawable/toolbar_shadow" />
+
+        <LinearLayout
+                android:id="@+id/scoreView"
+                android:layout_marginTop="-92dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:orientation="vertical">
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/borderSeparator"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="86dp"
+                    android:background="@android:color/white"
+                    android:padding="12dp"
+                    android:alpha="0.98">
+
+                <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:gravity="center_vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/closeScoreButton">
+
+                    <LinearLayout
+                            android:orientation="horizontal"
+                            android:id="@+id/scoreContentView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical">
+
+                        <FrameLayout
+                                android:id="@+id/chartView"
+                                android:layout_width="62dp"
+                                android:layout_height="62dp">
+
+                            <com.osano.privacymonitor.ui.ScoreChartView
+                                    android:id="@+id/scoreChart"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                            </com.osano.privacymonitor.ui.ScoreChartView>
+
+                            <ImageView
+                                    android:id="@+id/trendImageView"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="center"/>
+
+                        </FrameLayout>
+
+                        <LinearLayout
+                                android:id="@+id/scoreLinearLayout"
+                                android:orientation="vertical"
+                                android:layout_marginStart="16dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                            <TextView
+                                    android:id="@+id/scoreTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/lato_bold"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/primaryText"/>
+
+                            <TextView
+                                    android:id="@+id/scoreDescriptionTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:fontFamily="@font/lato"
+                                    android:textSize="15sp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_marginStart="40dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                            <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/lato"
+                                    android:text="@string/trend"
+                                    android:textAlignment="center"
+                                    android:textSize="15sp"/>
+
+                            <TextView
+                                    android:id="@+id/trendDescriptionTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/lato_bold"
+                                    android:textSize="15sp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/requestAnalysis"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="invisible">
+
+                        <TextView
+                                android:id="@+id/requestAnalysisTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="15dp"
+                                android:fontFamily="@font/lato"
+                                android:textSize="16sp"
+                                android:textAlignment="center"
+                                android:textColor="@color/scoreVeryGoodColor"/>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/requestAnalysisButton"
+                                android:background="@drawable/rounded_button"
+                                style="@style/actionButton"
+                                android:layout_width="94dp"
+                                android:layout_height="40dp"
+                                android:text="@string/requestScoreTitle"/>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <ImageButton
+                        android:id="@+id/closeScoreButton"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/close"
+                        android:src="@mipmap/close_button"
+                        android:layout_marginEnd="4dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@drawable/toolbar_shadow"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/navigationToolbar"
+            android:layout_width="0dp"
+            app:contentInsetStart="0dp"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/webViewFrameLayout"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageButton
+                    android:id="@+id/goBackButton"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/go_back"
+                    android:src="@mipmap/toolbar_back"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/goForwardButton"/>
+
+            <ImageButton
+                    android:id="@+id/goForwardButton"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/go_forward"
+                    android:src="@mipmap/toolbar_forward"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/goBackButton"
+                    app:layout_constraintEnd_toStartOf="@id/favoritesButton"/>
+
+            <ImageButton
+                    android:id="@+id/favoritesButton"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/go_forward"
+                    android:src="@mipmap/favorites"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/goForwardButton"
+                    app:layout_constraintEnd_toStartOf="@id/shareButton"/>
+
+            <ImageButton
+                    android:id="@+id/shareButton"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/go_forward"
+                    android:src="@mipmap/toolbar_share"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/favoritesButton"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@android:color/transparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
